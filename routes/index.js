@@ -3,8 +3,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  //res.render('index', { title: 'milo by 20minutes' });
-  res.render('index.html');
+  res.sendFile(appView + '/index.html');
 });
 
 module.exports = router;

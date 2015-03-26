@@ -6,3 +6,4 @@
 *.css
 *prepros.cfg
 *.css
+node_modules/

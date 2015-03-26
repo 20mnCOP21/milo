@@ -1,0 +1,35 @@
+/*
+ * Handles grid system
+ * This takes a lot of insipiration from Bootstrap grid systme
+ */
+$spanWidth = 100 / $columns
+
+@media $media-xs
+    for $i in (1..$columns)
+        .col-xs-{$i}
+            float left
+            width round($spanWidth * $i, 3) * 1%
+
+@media $media-sm
+    for $i in (1..$columns)
+        .col-sm-{$i}
+            float left
+            width round($spanWidth * $i, 3) * 1%
+
+@media $media-xs-sm
+    for $i in (1..$columns)
+        .col-xs-sm-{$i}
+            float left
+            width round($spanWidth * $i, 3) * 1%
+
+@media $media-md
+    for $i in (1..$columns)
+        .col-md-{$i}
+            float left
+            width round($spanWidth * $i, 3) * 1%
+
+@media $media-lg
+    for $i in (1..$columns)
+        .col-lg-{$i}
+            float left
+            width round($spanWidth * $i, 3) * 1%

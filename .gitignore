@@ -1,0 +1,8 @@
+*.DS_Store*
+*.zip
+*.sh
+*.idea/
+*_notes/
+*.css
+*prepros.cfg
+*.css

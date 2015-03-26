@@ -12,7 +12,7 @@ var app = express();
 
 var path = require('path');
 global.appRoot = path.resolve(__dirname);
-global.appView = appRoot + '/views';
+global.appViews = appRoot + '/views';
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

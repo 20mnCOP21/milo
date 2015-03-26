@@ -1,0 +1,181 @@
+/*
+ * Settings : Extendables
+ *
+ * We try to keep the code (html AND css) as semantic as possible
+ * Thus we want to avoid having classes that only refer to visual display such as .clearfix / .no-border / .no-list / ... etc.
+ * => we define these classes here, and then we @extend those who need them
+ * => class names prefixed by a $ won't be outputed in the css file (eg : $.background-color-default, $.color-default, etc.)
+ *
+ * Note : !important is tolerated here (though we still should try to avoid it...)
+ */
+
+/* Typography */
+.bold
+    font-weight bold
+
+.italic
+    font-style italic
+
+.align-center
+    text-align center
+
+.align-left
+    text-align left
+
+.align-right
+    text-align right
+
+.align-justify
+    text-align justify
+
+.font-secondary
+    font-family $font-secondary
+    font-weight bold
+    font-size 1.1rem
+    text-transform uppercase
+
+.uppercase
+    text-transform uppercase
+
+.list-pos-outside
+    list-style-position inside
+    padding-left 1em
+    text-indent -1em
+
+.list-type-none
+    list-style-type none
+
+.img-responsive
+    display block
+    width 100%
+    max-width 100%
+    height auto
+
+.quote-source
+    font-family $font-secondary
+    font-style italic
+
+/* wide screen (16/69 format) content */
+.ws-responsive-content
+    absolute top 0 left 0
+    width 100%
+    height 100%
+
+.ws-responsive-container
+    position relative
+    width 100%
+    padding-bottom 56.25%
+
+    > iframe
+    > object
+        @extends .ws-responsive-content
+
+/* Boxes display & positionning */
+.inline
+    display inline
+
+    > li
+        display inline
+
+.inline-block
+    display inline-block
+
+.border-none
+    border none!important
+
+.vsb-hidden
+    visibility hidden
+
+.float-left
+    float left!important
+
+.float-right
+    float right!important
+
+.relative
+    position relative
+
+.clearfix
+    &:after
+        content ""
+        display block
+        height 0
+        clear both
+        visibility hidden
+
+
+/* Aesthetics */
+.box
+    box-shadow 0 0 0 1px #e7e7e7
+    background-color #ffffff
+
+.shadowed
+    text-shadow 2px 2px 6px black
+
+.rnd-left
+    border-top-left-radius 1.2rem
+    border-bottom-left-radius 1.2rem
+
+.rnd-right
+    border-top-right-radius 1.2rem
+    border-bottom-right-radius 1.2rem
+
+for $i in 1..9
+    .bg-black-al{$i}
+        background rgba(black, $i * 0.1)
+
+/* Even / Odd */
+.even
+    background-color white
+
+.odd
+    background-color $color-bg-base
+
+/* Borders */
+/* Borders: dotted */
+.bado
+    border 1px dotted #a7a7a7
+
+.bbdo
+    border-bottom 1px dotted #a7a7a7
+
+.btdo
+    border-top 1px dotted #a7a7a7
+
+.brdo
+    border-right 1px dotted #a7a7a7
+
+.bldo
+    border-left 1px dotted #a7a7a7
+
+/* Borders: dashed */
+.bad
+    border 1px dashed #c7c7c7
+
+.bbd
+    border-bottom 1px dashed #c7c7c7
+
+.btd
+    border-top 1px dashed #c7c7c7
+
+.brd
+    border-right 1px dashed #c7c7c7
+
+.bld
+    border-left 1px dashed #c7c7c7
+
+/* Borders: solid */
+.bas
+    border 1px solid #c7c7c7
+
+.bts
+    border-top 1px solid #c7c7c7
+
+.brs
+    border-right 1px solid #c7c7c7
+
+.bbs
+    border-bottom 1px solid #c7c7c7
+
+.bls
+    border-left 1px solid #c7c7c7

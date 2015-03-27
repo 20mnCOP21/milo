@@ -1,0 +1,58 @@
+.logo
+    @extends .icon
+    display inline-block
+    padding-top 4px
+    width 6rem
+    height @width
+    font-size 4.8rem
+    text-align center
+    line-height 1
+    color white
+
+    &:before
+        content 'L'
+
+    &.bordered
+        border 1px solid
+
+    &.l-small
+        width auto
+        height auto
+        padding 0 0 0.4rem
+        font-size 2.4rem
+
+        &:before
+            content 'l'
+
+    em
+        display none
+
+.project-name
+    @extends .h1
+    color white
+    line-height 1
+
+    &.pn-small
+        font-size 2.4rem
+
+$logo-width = 144px
+.logo-21e
+    display block
+    width $logo-width
+    height $logo-width
+    background transparent url('../images/logo-21e.png') no-repeat center
+    background-size 0.9 * $logo-width 0.9 * $logo-width
+
+    &.bordered
+        border 1px solid white
+
+    em
+        display none
+
+.project-name-21e
+    @extends .uppercase
+    display inline-block
+    width $logo-width
+    font-size 1.2rem
+    font-weight bold
+    line-height 1

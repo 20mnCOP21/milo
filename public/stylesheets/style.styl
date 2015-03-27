@@ -1,0 +1,39 @@
+@import '../beerenberg/css/beerenberg.styl'
+
+body
+    position relative
+    background url(../images/background.jpg) no-repeat center
+    background-size cover
+    background-attachment fixed
+
+.app-wrapper
+    position absolute
+    top 0
+    left 0
+    width 100%
+    height 100%
+    height
+
+.app-nav
+    $s = 4.8 rem
+    position fixed
+    top 0
+    width 100%
+    height $s
+    background-color black
+
+    li
+        list-style-type none
+
+    a
+        display inline-block
+        width $s
+        height $s
+        color #f1f1f1
+        text-align center
+        line-height $s
+
+        &:before
+            font-size $s * .5
+
+

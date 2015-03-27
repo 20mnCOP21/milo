@@ -1,0 +1,163 @@
+/*
+ * Navbar
+ * Styles the top navigation bar
+ */
+#navigation
+    display none
+    position fixed
+    z-index 200
+    width 100%
+    height 4.8rem
+    border-bottom 1px solid darken($color-default, 10%)
+    background $color-bg-base
+    opacity 0.95
+    transition all 0.25s
+    line-height @height
+
+    a
+        color lighten($color-base, 60%)
+
+    a:hover
+    a:hover span
+    .active a
+    .active span
+        color $color-base
+        transition all 0.25s
+        border-bottom-color $color-default
+
+    &:hover
+        border-bottom-color $color-default
+        opacity 1
+
+.site-title
+#navigation li
+    float left
+    height inherit
+
+.brand
+    position static
+    display none
+    float left
+    height 4.5rem
+    margin 1px
+    border-radius 0
+    width 4.8rem
+    line-height 1
+
+.brand-menu-icon
+    background-image url('../images/logo-21e-small.png')
+    background-repeat no-repeat
+    background-position center
+    background-size 2.4rem 2.4rem
+    color white
+    text-align center
+    font-size 2.4rem
+
+    em
+        display none
+
+
+.site-title
+    display none
+    font-size 1.8rem
+    font-style oblique
+
+.nav
+    float right
+    height inherit
+    font-size 1.4rem
+    font-family $font-secondary
+    font-weight bold
+    text-transform uppercase
+
+    a
+        overflow hidden
+        float left
+        display block
+        height inherit
+        width 2.4rem
+        padding 0
+        margin 0 0.6rem
+        transition all 0.75s
+        transition-delay 0.25
+
+    .active
+        position relative
+
+        &:after
+            $w = 0.8rem
+            absolute bottom 0 left 50%
+            content ""
+            width 0
+            height 0
+            margin-left -($w / 2)
+            border-bottom $w solid black
+            border-left $w solid transparent
+            border-right @border-left
+
+/* Share buttons */
+.share
+    float right
+
+    a
+        display block
+        width 3.6rem
+        height @width
+        margin 0.6rem 0.6rem 0.6rem 0
+        border-radius 100%
+        color $color-bg-base!important
+        text-align center
+        line-height 3.9rem
+
+        &:before
+            font-size 2.1rem
+
+.share-facebook
+    background-color $color-default
+
+    &:hover
+        background-color darken($color-default, 40%)
+
+.share-twitter
+    background-color $color-sport
+
+    &:hover
+        background-color darken($color-sport, 20%)
+
+.share-google
+    background-color $color-entertainment
+
+    &:hover
+        background-color darken($color-entertainment, 20%)
+
+.share-comments
+    &:before
+        @extends .color-hightech
+
+    &:hover
+        background-color transparent!important
+
+        &:before
+            color $color-base
+
+/* Media queries */
+@media $media-max
+    .nav
+        a
+        a:hover
+            width auto!important
+
+@media $media-lg
+    .nav
+        a
+            &:hover
+                width 24rem
+
+
+@media $media-md
+    .site-title
+        display block
+
+@media $media-sm
+    .brand
+        display block

@@ -1,0 +1,36 @@
+/*
+ * Generic variables
+ */
+/* -- Grid -- */
+$columns = 12 // number of columns
+$gutter = 12 // guuter width
+
+/* -- Navigation -- */
+
+/* -- Media Queries --
+ *
+ * We handle 3 breakpoints and related media queries:
+ *      [xs] screen-width < 420px
+ *      [sm] 420px < screen-width < 768px
+ *      [md] 768px < screen-width < 960px
+ *      [lg] 768px < screen-width < 960px
+ *
+ * We also set a 1280px maximum width
+ */
+$max-width = 1280px
+$lg-min-width = 960px
+$md-min-width = 768px
+$sm-min-width = 420px
+/* @TODO: create a mixin to handle media queries
+ * e.g. : mq(xs,sm) would create a media query for [xs] and [sm] sizes
+ */
+$media-max = "screen and (min-width: " + $max-width + ")"
+$media-lg = "screen and (min-width: " + $lg-min-width + ")"
+$media-md = "screen and (min-width: " + $md-min-width + ")"
+$media-sm = "screen and (min-width: " + $sm-min-width + ")"
+
+/* Import files */
+@import 'nib'
+@import _base
+@import _layout
+@import _modules

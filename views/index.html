@@ -11,7 +11,7 @@
     <div class="app-wrapper bg-black-al5 white">
         <div class="section-wrapper">
             <!-- start screen -->
-            <section id="start" class="app-section">
+            <section id="start" class="bg-black-al4 app-section">
                 <!-- thermometer user -->
                 <div class="thermo-wrapper">
                     <p class="thermometer">
@@ -25,17 +25,57 @@
                     <li class="data-cold"><img src="images/flocon.png" alt="C'est cool" width="24" heigh="24" />31</li>
                 </ul>
 
-                <ul class="start-stats">
-                    <li><img src="images/flocon.png" alt="C'est chaud" width="24" heigh="24" />121</li>
-                    <li><img src="images/soleil.png" alt="C'est chaud" width="24" heigh="24" />56</li>
-                </ul>
+                <!--<ul class="start-stats">-->
+                    <!--<li><img src="images/flocon.png" alt="C'est chaud" width="24" heigh="24" />121</li>-->
+                    <!--<li><img src="images/soleil.png" alt="C'est chaud" width="24" heigh="24" />56</li>-->
+                <!--</ul>-->
             </section>
             <!-- news feed -->
-            <section id="newsfeed" class="app-section pl2 pr2" style="display:none">
+            <section id="newsfeed" class="bg-black-al1 app-section pl2 pr2" style="display:none">
                 <article>
-                    <p class="news-title" data-icon="a">Les trois bonnes nouvelles pour le climat du sommet de Paris</p>
-                    <button>C'est chaud</button>
-                    <button>C'est cool</button>
+                    <p class="news-title toggle" data-icon="a">Les trois bonnes nouvelles pour le climat du sommet de Lima</p>
+                    <div class="expand clearfix mt1 pt2 pb2 pl1 pr1">
+                        <p class="h4 pb1">Les trois bonnes nouvelles pour le climat du sommet de Lima</p>
+                        <p><strong>CLIMAT</strong> On avait tendance à désespérer des sommets mondiaux sur le climat, mais cette année pourrait marquer un tournant dans les négociations…</p>
+                        <p><img src="http://img.20mn.fr/FO4cEPXgSXqvLHyap1AwkQ/648x415_ministre-peruvien-environnement-ouvre-cop20-1er-decembre-2014-lima.jpg" /></p>
+                        <p>Trouver un accord sur le climat ne devrait pas être le Pérou. Alors que les négociations piétinaient depuis l’échec retentissant du sommet de Copenhague en 2009, <a href="http://www.20minutes.fr/planete/1491819-20141201-enjeux-conference-internationale-climat-cinq-chiffres">les réunions qui ont lieu à Lima jusqu’au 12 décembre pourraient enfin ouvrir la voie à un accord mondial</a>. Pour les membres de <a href="http://www.iddri.org/" target="_blank">l’Institut du développement durable et des relations internationales (Iddri)</a>, Lima ouvre même la voie à un sommet réussi à Paris en 2015. Voici pourquoi.</p>
+                        <p class="bold">Les Etats-Unis et la Chine s’engagent</p>
+                        <p>Ils étaient les mauvais élèves du climat, voilà que les Etats-Unis et la Chine, deux des plus gros émetteurs de gaz à effet de serre au monde, <a href="http://www.20minutes.fr/planete/1478747-20141112-climat-etats-unis-chine-entendent-accord-historique">ont convenu en novembre dernier de réduire leurs émissions de CO2.</a>&nbsp;«Cela donne une tonalité tout à fait différente aux négociations, estime Teresa Ribera, directrice de l’Iddri. Cet engagement signifie que le climat et la transition énergétique deviennent un sujet important pour eux.»&nbsp;Même si les objectifs fixés par les Etats-Unis et la Chine peuvent sembler insuffisants, le message politique est fort.</p>
+
+                        <hr class="mt1 mb1" />
+                        <p class="bold">Qu'en pensez-vous ?</p>
+                        <p>Financer l’adaptation des pays en développement au changement climatique via le fonds vert, c’est… </p>
+                        <div class="align-center" style="width:48%;float:left;">Indispensable<a href="#" class="align-left button-vote button-hot">C'est chaud</a></div>
+                        <div class="align-center" style="width:48%;float:right;">Impossible<a href="#" class="align-left button-vote button-cold">C'est cool</a></div>
+
+
+
+                    </div>
+
+                </article>
+                <article>
+                    <p class="news-title" data-icon="T">Lorem ipsum si amet color bla bla bla semper toto.</p>
+                </article>
+                <article>
+                    <p class="news-title" data-icon="a">Lorem ipsum si amet color bla bla bla semper toto.</p>
+                </article>
+                <article>
+                    <p class="news-title" data-icon="a">Lorem ipsum si amet color bla bla bla semper toto.</p>
+                </article>
+                <article>
+                    <p class="news-title" data-icon="F">Lorem ipsum si amet color bla bla bla semper toto.</p>
+                </article>
+                <article>
+                    <p class="news-title" data-icon="T">Lorem ipsum si amet color bla bla bla semper toto.</p>
+                </article>
+                <article>
+                    <p class="news-title" data-icon="a">Lorem ipsum si amet color bla bla bla semper toto.</p>
+                </article>
+                <article>
+                    <p class="news-title" data-icon="a">Lorem ipsum si amet color bla bla bla semper toto.</p>
+                </article>
+                <article>
+                    <p class="news-title" data-icon="F">Lorem ipsum si amet color bla bla bla semper toto.</p>
                 </article>
                 <article>
                     <p class="news-title" data-icon="T">Lorem ipsum si amet color bla bla bla semper toto.</p>
@@ -50,7 +90,7 @@
                     <p class="news-title" data-icon="F">Lorem ipsum si amet color bla bla bla semper toto.</p>
                 </article>
             </section>
-            <section id="categories" class="app-section" style="display:none">
+            <section id="categories" class="bg-black-al5 app-section" style="display:none">
                 categories
             </section>
         </div>
@@ -72,6 +112,10 @@
                 var _target = $(this).attr('data-target');
                 $('.app-section').hide();
                 $(_target).show();
+            })
+
+            $('.toggle').click(function() {
+                $('.expand').toggle();
             })
         });
 

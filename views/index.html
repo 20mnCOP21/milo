@@ -18,13 +18,13 @@
                 <div class="thermo-wrapper">
                     <p class="thermometer">
                         <span class="thermo-2deg">+2&deg;</span>
-                        <span class="thermo-level" style="height:4rem"></span>
+                        <span id="gaugeValue" class="thermo-level" style="height:0rem"></span>
                     </p>
                 </div>
                 <ul class="data-user">
                     <li class="data-celsius mb1 pr1">1<span>.78&deg;</span></li>
-                    <li class="data-hot"><img src="images/soleil.png" alt="C'est chaud" width="24" heigh="24" />16</li>
-                    <li class="data-cold"><img src="images/flocon.png" alt="C'est cool" width="24" heigh="24" />31</li>
+                    <li class="data-hot"><img src="images/soleil.png" alt="C'est chaud" width="24" heigh="24" /><span id="hotValue"></span></li>
+                    <li class="data-cold"><img src="images/flocon.png" alt="C'est cool" width="24" heigh="24" /><span id="coldValue"></span></li>
                 </ul>
 
                 <!--<ul class="start-stats">-->
@@ -122,8 +122,20 @@
         });
 
 		var socket = io.connect('http://milo.20minutes.lh:3000');
-		socket.on('updateGauge', function(value){
-		    console.log(value);
+
+		socket.emit('loadFirstTime', 'load');
+
+		socket.on('loadFirstTime', function(data){
+			$('#gaugeValue').attr('style', 'height:'+data.gaugeValue+'rem');
+		    $('#hotValue').html(data.totalHot);
+		    $('#coldValue').html(data.totalCold);
+		});
+
+		socket.on('updateGauge', function(data){
+		    console.log(data);
+		    $('#gaugeValue').attr('style', 'height:'+data.gaugeValue+'rem');
+		    $('#hotValue').html(data.totalHot);
+		    $('#coldValue').html(data.totalCold);
 		});
 	</script>
 </body>

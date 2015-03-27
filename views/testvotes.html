@@ -16,7 +16,7 @@
 		var button = $('button');
 		button.each(function(index){
 			$(this).click(function(){
-				alert($(this).data('value'));
+				//alert($(this).data('value'));
 				socket.emit('vote', $(this).data('value'));
 			});
 		});

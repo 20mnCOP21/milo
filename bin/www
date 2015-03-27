@@ -33,6 +33,17 @@ io.sockets.on('connection', function(socket){
   socket.on('message', function(msg){
     io.emit('message', msg);
   });
+  socket.on('loadFirstTime', function(value){
+    fs.readFile(modelsDir + '/votes.json', 'utf8', function (err, data) {
+      if (err) {
+        console.log('Error: ' + err);
+        return;
+      }
+
+      data = JSON.parse(data);
+      io.emit('loadFirstTime', data);
+    });
+  });
   socket.on('vote', function(value){
     console.log('vote'+value);
     fs.readFile(modelsDir + '/votes.json', 'utf8', function (err, data) {
@@ -64,7 +75,7 @@ io.sockets.on('connection', function(socket){
       fs.writeFile(modelsDir + '/votes.json', JSON.stringify(data), function (err) {
         if (err) return console.log(err);
         console.log('JSON saved');
-        io.emit('updateGauge', data.gaugeValue);
+        io.emit('updateGauge', data);
       });
 
     });

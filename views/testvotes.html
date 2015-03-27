@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+	<title>Test votes</title>
+	<script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+  	<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+</head>
+<body>
+	<button data-value="1">C'est chaud</button>
+	<button data-value="-1">C'est cool</button>
+</body>
+	<script>
+		var socket = io.connect('http://milo.20minutes.lh:3000');
+
+
+		var button = $('button');
+		button.each(function(index){
+			$(this).click(function(){
+				alert($(this).data('value'));
+				socket.emit('vote', $(this).data('value'));
+			});
+		});
+	</script>
+</html>

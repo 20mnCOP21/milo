@@ -1112,7 +1112,8 @@ footer {
   padding-left: 1em;
   text-indent: -1em;
 }
-.list-type-none {
+.list-type-none,
+.data-user {
   list-style-type: none;
 }
 .img-responsive,
@@ -2428,6 +2429,84 @@ footer a:hover {
 .oembedall-container a.oembed,
 .oembedall-container br {
   display: none;
+}
+.thermo-wrapper {
+  position: absolute;
+  top: 20%;
+  left: 25%;
+  margin-top: 5.4rem;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+.thermometer {
+  position: relative;
+  width: 3.6rem;
+  height: 18rem;
+  display: block;
+  -webkit-border-radius: 1.8rem 1.8rem 0 0;
+  border-radius: 1.8rem 1.8rem 0 0;
+  border: 0.3rem solid #fff;
+  border-bottom: none;
+/* Thermometer Bulb */
+}
+.thermometer:before {
+  content: ' ';
+  display: block;
+  width: 7.2rem;
+  height: 7.2rem;
+  position: absolute;
+  z-index: -1;
+  bottom: -7.2rem;
+  left: -2.4rem;
+/* Place the bulb under the column */
+  -webkit-border-radius: 100%;
+  border-radius: 100%;
+  border: 0.3rem solid #fff;
+  background: #00b9f3;
+}
+.thermo-level {
+  display: block !important;
+  width: 3rem;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: #00b9f3;
+}
+.thermo-2deg {
+  position: absolute;
+  bottom: 5.999999999999994rem;
+  left: -160%;
+  border-bottom: 2px dashed #fff;
+  width: 260%;
+  z-index: 10;
+}
+.data-user {
+  position: absolute;
+  top: 36%;
+  right: 25%;
+  text-shadow: 0 0 0.6rem #000;
+}
+.data-user img {
+  display: inline-block;
+}
+.data-celsius {
+  border-bottom: 1px solid #fff;
+  font-weight: bold;
+  font-size: 9.6rem;
+  line-height: 1;
+}
+.data-celsius span {
+  font-size: 0.4em;
+}
+.data-cold,
+.data-hot {
+  float: left;
+  padding-left: 1.6rem;
+  font-size: 2.1rem;
 }
 body {
   position: relative;

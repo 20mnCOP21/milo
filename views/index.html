@@ -12,18 +12,23 @@
     <nav class="app-nav">
         <ul>
             <li class="float-left"><a href="#" data-icon="L"><em>20 Minutes</em></a></li>
-            <li class="float-right"><a href="#" data-icon="R"><em>Rafraîchir</em></a></li>
             <li class="float-right"><a href="#" data-icon="u"><em>Mon compte</em></a></li>
         </ul>
     </nav>
     <section id="start" class="app-section">
-        <ul class="start-thermometer">
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+        <!-- thermometer user -->
+        <div class="thermo-wrapper">
+            <p class="thermometer">
+                <span class="thermo-2deg">+2&deg;</span>
+                <span class="thermo-level" style="height:4rem"></span>
+            </p>
+        </div>
+        <ul class="data-user">
+            <li class="data-celsius mb1 pr1">1<span>.78&deg;</span></li>
+            <li class="data-cold"><img src="images/flocon.png" alt="C'est cool" width="24" heigh="24" />31</li>
+            <li class="data-hot"><img src="images/soleil.png" alt="C'est chaud" width="24" heigh="24" />16</li>
         </ul>
+
         <ul class="start-stats">
             <li>121 flocons</li>
             <li>56 soleils</li>

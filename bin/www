@@ -8,6 +8,9 @@ var app = require('../app');
 var debug = require('debug')('milo:server');
 var http = require('http');
 
+var fs = require('fs');
+var modelsDir = __dirname + '/../models';
+
 /**
  * Get port from environment and store in Express.
  */
@@ -29,6 +32,42 @@ io.sockets.on('connection', function(socket){
   });
   socket.on('message', function(msg){
     io.emit('message', msg);
+  });
+  socket.on('vote', function(value){
+    console.log('vote'+value);
+    fs.readFile(modelsDir + '/votes.json', 'utf8', function (err, data) {
+      if (err) {
+        console.log('Error: ' + err);
+        return;
+      }
+
+      data = JSON.parse(data);
+
+      console.dir(data);
+
+      data.total += 1;
+
+      if ('1' == value) {
+        data.totalHot += 1;
+        if (data.gaugeValue < 18) {
+          data.gaugeValue += 0.09;
+        }
+      } else {
+        data.totalCold += 1;
+        if (data.gaugeValue > 0) {
+          data.gaugeValue -= 0.09;
+        }
+      }
+
+      console.log(data);
+
+      fs.writeFile(modelsDir + '/votes.json', JSON.stringify(data), function (err) {
+        if (err) return console.log(err);
+        console.log('JSON saved');
+        io.emit('updateGauge', data.gaugeValue);
+      });
+
+    });
   });
 
 });

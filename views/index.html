@@ -7,6 +7,8 @@
     <meta name="apple-touch-fullscreen" content="yes">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="content-type" content="text/html; charset=utf-8"></head>
+    <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+  	<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
 <body>
     <div class="app-wrapper bg-black-al5 white">
         <div class="section-wrapper">
@@ -16,13 +18,13 @@
                 <div class="thermo-wrapper">
                     <p class="thermometer">
                         <span class="thermo-2deg">+2&deg;</span>
-                        <span class="thermo-level" style="height:4rem"></span>
+                        <span id="gaugeValue" class="thermo-level" style="height:0rem"></span>
                     </p>
                 </div>
                 <ul class="data-user">
                     <li class="data-celsius mb1 pr1">1<span>.78&deg;</span></li>
-                    <li class="data-hot"><img src="images/soleil.png" alt="C'est chaud" width="24" heigh="24" />16</li>
-                    <li class="data-cold"><img src="images/flocon.png" alt="C'est cool" width="24" heigh="24" />31</li>
+                    <li class="data-hot"><img src="images/soleil.png" alt="C'est chaud" width="24" heigh="24" /><span id="hotValue"></span></li>
+                    <li class="data-cold"><img src="images/flocon.png" alt="C'est cool" width="24" heigh="24" /><span id="coldValue"></span></li>
                 </ul>
 
                 <!--<ul class="start-stats">-->
@@ -119,6 +121,22 @@
             })
         });
 
-    </script>
+		var socket = io.connect('http://milo.20minutes.lh:3000');
+
+		socket.emit('loadFirstTime', 'load');
+
+		socket.on('loadFirstTime', function(data){
+			$('#gaugeValue').attr('style', 'height:'+data.gaugeValue+'rem');
+		    $('#hotValue').html(data.totalHot);
+		    $('#coldValue').html(data.totalCold);
+		});
+
+		socket.on('updateGauge', function(data){
+		    console.log(data);
+		    $('#gaugeValue').attr('style', 'height:'+data.gaugeValue+'rem');
+		    $('#hotValue').html(data.totalHot);
+		    $('#coldValue').html(data.totalCold);
+		});
+	</script>
 </body>
 </html>

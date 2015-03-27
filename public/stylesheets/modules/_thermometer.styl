@@ -1,7 +1,7 @@
 .thermo-wrapper
     position absolute
     top 20%
-    left 50%
+    left 25%
     margin-top 5.4rem
     transform translateX(-50%)
 
@@ -33,21 +33,46 @@ $bw = .3rem /* border-width */
         border $bw solid white
         background $color-sport
 
-    /* This piece here connects the column with the bulb */
-    &:after
-        content ' '
-        width $w - 2 * $bw
-        height .2 * $h
-        display block
-        position absolute
-        bottom 0
-        left 0
-        background $color-sport
+/* This piece here connects the column with the bulb */
+.thermo-level
+    display block!important
+    width $w - 2 * $bw
+    //height .2 * $h
+    display block
+    position absolute
+    bottom 0
+    left 0
+    background $color-sport
 
 .thermo-2deg
     position absolute
-    bottom .3 * $h
+    bottom (1 / 3) * $h
     left -160%
     border-bottom: 2px dashed white
     width 260%
     z-index 10
+
+.data-user
+    @extends .list-type-none
+    position absolute
+    top 36%
+    right 25%
+    text-shadow 0 0 .6rem black
+    img
+        display inline-block
+
+.data-celsius
+    border-bottom 1px solid white
+    font-weight bold
+    font-size 9.6rem
+    line-height 1
+
+    span
+        font-size .4em
+
+.data-cold,
+.data-hot
+    float left
+    padding-left 1.6rem
+    font-size   2.1rem
+

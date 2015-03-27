@@ -1112,7 +1112,8 @@ footer {
   padding-left: 1em;
   text-indent: -1em;
 }
-.list-type-none {
+.list-type-none,
+.data-user {
   list-style-type: none;
 }
 .img-responsive,
@@ -2432,7 +2433,7 @@ footer a:hover {
 .thermo-wrapper {
   position: absolute;
   top: 20%;
-  left: 50%;
+  left: 25%;
   margin-top: 5.4rem;
   -webkit-transform: translateX(-50%);
   -moz-transform: translateX(-50%);
@@ -2450,7 +2451,6 @@ footer a:hover {
   border: 0.3rem solid #fff;
   border-bottom: none;
 /* Thermometer Bulb */
-/* This piece here connects the column with the bulb */
 }
 .thermometer:before {
   content: ' ';
@@ -2467,10 +2467,9 @@ footer a:hover {
   border: 0.3rem solid #fff;
   background: #00b9f3;
 }
-.thermometer:after {
-  content: ' ';
+.thermo-level {
+  display: block !important;
   width: 3rem;
-  height: 3.6rem;
   display: block;
   position: absolute;
   bottom: 0;
@@ -2479,11 +2478,35 @@ footer a:hover {
 }
 .thermo-2deg {
   position: absolute;
-  bottom: 5.399999999999999rem;
+  bottom: 5.999999999999994rem;
   left: -160%;
   border-bottom: 2px dashed #fff;
   width: 260%;
   z-index: 10;
+}
+.data-user {
+  position: absolute;
+  top: 36%;
+  right: 25%;
+  text-shadow: 0 0 0.6rem #000;
+}
+.data-user img {
+  display: inline-block;
+}
+.data-celsius {
+  border-bottom: 1px solid #fff;
+  font-weight: bold;
+  font-size: 9.6rem;
+  line-height: 1;
+}
+.data-celsius span {
+  font-size: 0.4em;
+}
+.data-cold,
+.data-hot {
+  float: left;
+  padding-left: 1.6rem;
+  font-size: 2.1rem;
 }
 body {
   position: relative;

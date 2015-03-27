@@ -2429,6 +2429,62 @@ footer a:hover {
 .oembedall-container br {
   display: none;
 }
+.thermo-wrapper {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  margin-top: 5.4rem;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+.thermometer {
+  position: relative;
+  width: 3.6rem;
+  height: 18rem;
+  display: block;
+  -webkit-border-radius: 1.8rem 1.8rem 0 0;
+  border-radius: 1.8rem 1.8rem 0 0;
+  border: 0.3rem solid #fff;
+  border-bottom: none;
+/* Thermometer Bulb */
+/* This piece here connects the column with the bulb */
+}
+.thermometer:before {
+  content: ' ';
+  display: block;
+  width: 7.2rem;
+  height: 7.2rem;
+  position: absolute;
+  z-index: -1;
+  bottom: -7.2rem;
+  left: -2.4rem;
+/* Place the bulb under the column */
+  -webkit-border-radius: 100%;
+  border-radius: 100%;
+  border: 0.3rem solid #fff;
+  background: #00b9f3;
+}
+.thermometer:after {
+  content: ' ';
+  width: 3rem;
+  height: 3.6rem;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: #00b9f3;
+}
+.thermo-2deg {
+  position: absolute;
+  bottom: 5.399999999999999rem;
+  left: -160%;
+  border-bottom: 2px dashed #fff;
+  width: 260%;
+  z-index: 10;
+}
 body {
   position: relative;
   background: url("../images/background.jpg") no-repeat center;

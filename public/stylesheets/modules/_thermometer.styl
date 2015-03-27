@@ -1,0 +1,53 @@
+.thermo-wrapper
+    position absolute
+    top 20%
+    left 50%
+    margin-top 5.4rem
+    transform translateX(-50%)
+
+
+$w = 3.6rem
+$h = 18rem
+$bw = .3rem /* border-width */
+.thermometer
+    position relative
+    width $w
+    height $h
+    display block
+    border-radius .5 * $w .5 * $w 0 0
+    border $bw solid white
+    border-bottom none
+
+    /* Thermometer Bulb */
+    &:before
+        content ' '
+        display block
+        width $w * 2
+        height $w * 2
+        position absolute
+        z-index -1
+        bottom -1 * @height
+        left .5 * ($w - @width - 4 * $bw)
+        /* Place the bulb under the column */
+        border-radius 100%
+        border $bw solid white
+        background $color-sport
+
+    /* This piece here connects the column with the bulb */
+    &:after
+        content ' '
+        width $w - 2 * $bw
+        height .2 * $h
+        display block
+        position absolute
+        bottom 0
+        left 0
+        background $color-sport
+
+.thermo-2deg
+    position absolute
+    bottom .3 * $h
+    left -160%
+    border-bottom: 2px dashed white
+    width 260%
+    z-index 10
